@@ -1,0 +1,24 @@
+# Clojure/Java
+target/
+classes/
+*.jar
+*.class
+pom.xml
+pom.xml.asc
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.calva/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# REPL
+.nrepl-port
+.cpcache/
+
+# Logs
+*.log
