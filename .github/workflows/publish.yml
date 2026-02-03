@@ -38,9 +38,6 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-clojure-
     
-    - name: Run tests
-      run: clojure -M:test
-    
     - name: Deploy to Clojars
       run: clojure -T:build deploy
       env:

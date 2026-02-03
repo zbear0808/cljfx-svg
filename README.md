@@ -83,53 +83,7 @@ The `:color` prop accepts:
 
 ## Full Example
 
-```clojure
-(ns my-app.core
-  (:require [cljfx.api :as fx]
-            [cljfx-svg.core :as svg]))
-
-(def *state (atom {:theme :light}))
-
-(defn toolbar-button [{:keys [icon-src label on-action]}]
-  {:fx/type :button
-   :graphic {:fx/type svg/icon
-             :src icon-src
-             :size 16
-             :color :white}
-   :text label
-   :on-action on-action})
-
-(defn toolbar []
-  {:fx/type :h-box
-   :spacing 8
-   :padding 8
-   :style {:-fx-background-color "#333"}
-   :children [{:fx/type toolbar-button
-               :icon-src "icons/save.svg"
-               :label "Save"
-               :on-action {:event/type :save}}
-              {:fx/type toolbar-button
-               :icon-src "icons/folder-open.svg"
-               :label "Open"
-               :on-action {:event/type :open}}]})
-
-(defn root [_]
-  {:fx/type :stage
-   :showing true
-   :title "SVG Icon Demo"
-   :scene {:fx/type :scene
-           :root {:fx/type :v-box
-                  :children [{:fx/type toolbar}]}}})
-
-(def renderer
-  (fx/create-renderer
-    :middleware (fx/wrap-map-desc
-                  (assoc fx/keyword->lifecycle :root root))
-    :opts {:fx.opt/map-event-handler
-           (fn [event] (prn :event event))}))
-
-(fx/mount-renderer *state renderer)
-```
+See [`examples/toolbar_demo.clj`](examples/toolbar_demo.clj) for a complete working example.
 
 ## SVG Support
 
@@ -143,12 +97,6 @@ Powered by [fxsvgimage](https://fxsvgimage.sourceforge.io/), this library suppor
 For complete documentation, see the [fxsvgimage documentation](https://fxsvgimage.sourceforge.io/).
 
 ## Development
-
-### Running tests
-
-```bash
-clj -M:test
-```
 
 ### Building & Deployment
 

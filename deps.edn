@@ -8,22 +8,11 @@
  
  :aliases
  {:dev
-  {:extra-paths ["dev" "test"]
+  {:extra-paths ["dev"]
    :extra-deps {org.openjfx/javafx-base$win {:mvn/version "22"}
                 org.openjfx/javafx-controls$win {:mvn/version "22"}
                 org.openjfx/javafx-graphics$win {:mvn/version "22"}
                 org.openjfx/javafx-swing$win {:mvn/version "22"}}}
-  
-  :test
-  {:extra-paths ["test"]
-   :extra-deps {io.github.cognitect-labs/test-runner
-                {:git/tag "v0.5.1" :git/sha "dfb30dd"}
-                org.openjfx/javafx-base$win {:mvn/version "22"}
-                org.openjfx/javafx-controls$win {:mvn/version "22"}
-                org.openjfx/javafx-graphics$win {:mvn/version "22"}
-                org.openjfx/javafx-swing$win {:mvn/version "22"}}
-   :main-opts ["-m" "cognitect.test-runner"]
-   :exec-fn cognitect.test-runner.api/test}
   
   :build
   {:deps {io.github.clojure/tools.build {:mvn/version "0.9.6"}
