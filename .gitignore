@@ -5,6 +5,8 @@ classes/
 *.class
 pom.xml
 pom.xml.asc
+.clj-kondo/
+.lsp/
 
 # IDE
 .idea/
